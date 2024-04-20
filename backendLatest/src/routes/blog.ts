@@ -19,11 +19,6 @@ blogRouter.use(async (c, next) => {
   const authHeader = c.req.header("Authorization") || ""
   console.log(authHeader,"authHeader")
   try{
-
-
-
-
-    
     console.log(authHeader)
     // const token = authHeader.split(' ')[1];
   const user = await verify(authHeader.split(' ')[1], c.env.JWT_SECRET)
